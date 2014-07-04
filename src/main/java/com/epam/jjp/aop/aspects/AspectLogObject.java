@@ -10,13 +10,13 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class AspectLogObject implements IAspectLog {
 
-	@Before("execution(* com.epam.jjp.aop.aspects.AspectLogObject.BeforeMethod(..))")
+	@Before("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
 	public void BeforeMethod() {
 		System.out
 				.println("!!!!!!!!!!!!!!!!!!!The battle has started!!!!!!!!!!!!!!!!!!!!!");
 	}
 
-	@After("execution(* com.epam.jjp.aop.aspects.AspectLogObject.AfterMethod(..))")
+	@After("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
 	public void AfterMethod() {
 		System.out
 				.println("!!!!!!!!!!!!!!!!!!!The battle has ended!!!!!!!!!!!!!!!!!!!!!!!");
