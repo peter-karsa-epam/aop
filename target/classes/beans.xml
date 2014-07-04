@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/util 
+	                    http://www.springframework.org/schema/util/spring-util-3.2.xsd ">
+
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="aspectC" class="com.epam.jjp.aop.aspects.AspectLogObject" />
+
+	<bean id="battleOuterRim" class="com.epam.jjp.aop.domain.Battle"
+		c:_0="The battle" c:_1-ref="marines" c:_2-ref="aliens" c:_3-ref="predators"
+		c:_4="LV223"></bean>
+
+	<util:list id="marines">
+		<ref bean="marine" />
+		<ref bean="marine" />
+		<ref bean="marine" />
+		<ref bean="marine" />
+		<ref bean="marine" />
+		<ref bean="marine" />
+	</util:list>
+
+	<util:list id="aliens">
+		<ref bean="alien" />
+		<ref bean="alien" />
+		<ref bean="alien" />
+		<ref bean="alien" />
+		<ref bean="alien" />
+		<ref bean="alien" />
+	</util:list>
+
+	<util:list id="predators">
+		<ref bean="predator" />
+		<ref bean="predator" />
+		<ref bean="predator" />
+		<ref bean="predator" />
+		<ref bean="predator" />
+		<ref bean="predator" />
+	</util:list>
+
+	<bean id="marine" class="com.epam.jjp.aop.domain.Marine" scope="prototype"
+		c:_0="Jimmy" c:_1="50" c:_2-ref="rifle">
+	</bean>
+	<bean id="alien" class="com.epam.jjp.aop.domain.Alien" scope="prototype"
+		c:_0="Alien guy" c:_1="50" c:_2-ref="tounge">
+	</bean>
+	<bean id="predator" class="com.epam.jjp.aop.domain.Predator"
+		scope="prototype" c:_0="Predator guy" c:_1="50" c:_2-ref="plasma">
+	</bean>
+
+
+	<bean id="rifle" class="com.epam.jjp.aop.domain.Weapon" scope="prototype"
+		c:_0="50">
+	</bean>
+
+	<bean id="tounge" class="com.epam.jjp.aop.domain.Weapon" scope="prototype"
+		c:_0="60">
+	</bean>
+
+	<bean id="plasma" class="com.epam.jjp.aop.domain.Weapon" scope="prototype"
+		c:_0="70">
+	</bean>
+
+</beans>
