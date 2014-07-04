@@ -3,11 +3,11 @@ package com.epam.jjp.aop.aspects;
 public class AspectLogObject implements IAspectLog {
 
 	public void BeforeMethod() {
-		System.out.println("The battle has started!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!The battle has started!!!!!!!!!!!!!!!!!!!!!");
 	}
 
 	public void AfterMethod() {
-		System.out.println("The battle has ended!");
+		System.out.println("!!!!!!!!!!!!!!!!!!!The battle has ended!!!!!!!!!!!!!!!!!!!!!!!");
 
 	}
 

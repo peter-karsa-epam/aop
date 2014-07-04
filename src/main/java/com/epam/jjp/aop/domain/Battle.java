@@ -29,8 +29,8 @@ public class Battle {
 		fight();
 	}
 
-	//@Before("execution(* com.epam.jjp.aop.aspects.AspectLogObject.BeforeMethod(..))")
-	//@After("execution(* com.epam.jjp.aop.aspects.AspectLogObject.AfterMethod(..))")
+	@Before("execution(* com.epam.jjp.aop.aspects.AspectLogObject.BeforeMethod(..))")
+	@After("execution(* com.epam.jjp.aop.aspects.AspectLogObject.AfterMethod(..))")
 	private boolean fightRound(List<LifeForm> offense, List<LifeForm> defense) {
 		boolean eliminated = false;
 		for (int i = 0; i < offense.size(); i++) {
