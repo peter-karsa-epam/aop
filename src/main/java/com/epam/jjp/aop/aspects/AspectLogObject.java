@@ -16,30 +16,31 @@ public class AspectLogObject implements IAspectLog {
 	private long begin;
 
 	@Before("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
-	public void BeforeMethod(JoinPoint joinPoint) {
+	public void BeforeMethod(final JoinPoint joinPoint) {
 		System.out.println("*****The battle has started!*****");
 		begin = new Date().getTime();
 	}
 
 	@After("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
-	public void AfterMethod(JoinPoint joinPoint) {
+	public void AfterMethod(final JoinPoint joinPoint) {
 		System.out.println("*****The battle has ended!*****\n[It lasted "
 				+ (new Date().getTime() - begin) + " milliseconds]");
 
 	}
 
 	@AfterReturning(pointcut = "execution(* com.epam.jjp.aop.domain.Battle.getWinnerCorp(..))", returning = "result")
-	public void AfterReturningMethod(JoinPoint joinPoint, Object result) {
-
+	public void AfterReturningMethod(final JoinPoint joinPoint, Object result) {
+		System.out.println("Result: " + result.toString());
 	}
 
 	@AfterThrowing("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
-	public void AfterThrowingMethod(JoinPoint joinPoint) {
+	public void AfterThrowingMethod(final JoinPoint joinPoint) {
 
 	}
 
 	@Around("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
-	public void AroundMethod(ProceedingJoinPoint joinPoint) throws Throwable {
+	public void AroundMethod(final ProceedingJoinPoint joinPoint)
+			throws Throwable {
 		joinPoint.proceed();
 	}
 

@@ -17,5 +17,6 @@ public class App {
 
 		Battle newBattle = context.getBean("battleOuterRim", Battle.class);
 		newBattle.start();
+		newBattle.getWinnerCorp();
 	}
 }
