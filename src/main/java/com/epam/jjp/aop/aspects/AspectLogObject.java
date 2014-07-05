@@ -35,7 +35,7 @@ public class AspectLogObject implements IAspectLog {
 
 	@AfterThrowing("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
 	public void AfterThrowingMethod(final JoinPoint joinPoint) {
-
+		
 	}
 
 	@Around("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
