@@ -35,13 +35,16 @@ public class AspectLogObject implements IAspectLog {
 
 	@AfterThrowing("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
 	public void AfterThrowingMethod(final JoinPoint joinPoint) {
-		
+		System.out
+				.println("There has been an unknown failure during the battle!");
 	}
 
 	@Around("execution(* com.epam.jjp.aop.domain.Battle.start(..))")
 	public void AroundMethod(final ProceedingJoinPoint joinPoint)
 			throws Throwable {
+		System.out.println("Prepare for battle!");
 		joinPoint.proceed();
+		System.out.println("Who ever wins, we lose...");
 	}
 
 }
